@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Search } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
 import { sitemapData } from './sitemapData';
 import './Navbar.css';
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
@@ -49,9 +51,11 @@ const Navbar = () => {
   };
 
   const handleLinkClick = (path, e) => {
-    e.preventDefault();
-    console.log('Navigating to:', path);
-    alert(`Would navigate to: ${path}`);
+    // Only prevent default for external links or special cases
+    if (!path.startsWith('http') && !path.startsWith('mailto') && !path.startsWith('tel')) {
+      e.preventDefault();
+      navigate(path);
+    }
     closeMenu();
   };
 
@@ -86,13 +90,13 @@ const Navbar = () => {
           </button>
 
           <div className="logo-container">
-            <a 
-              href="/" 
+            <Link 
+              to="/" 
               className="logo"
-              onClick={(e) => handleLinkClick('/', e)}
+              onClick={closeMenu}
             >
               FERZ
-            </a>
+            </Link>
           </div>
 
           <button 
@@ -117,13 +121,13 @@ const Navbar = () => {
             </button>
 
             <div className="overlay-logo-container">
-              <a 
-                href="/" 
+              <Link 
+                to="/" 
                 className="overlay-logo"
-                onClick={(e) => handleLinkClick('/', e)}
+                onClick={closeMenu}
               >
                 FERZ
-              </a>
+              </Link>
             </div>
 
             <form onSubmit={handleSearchSubmit} className="search-container">
@@ -164,14 +168,14 @@ const Navbar = () => {
                 <h2 className="sidebar-title sidebar-title-secondary">Company</h2>
                 <nav className="nav-section">
                   {sitemapData.companyPages.filter(page => page.id !== 'home').map((page) => (
-                    <a
+                    <Link
                       key={page.id}
-                      href={page.path}
+                      to={page.path}
                       className="nav-link"
-                      onClick={(e) => handleLinkClick(page.path, e)}
+                      onClick={closeMenu}
                     >
                       {page.title}
-                    </a>
+                    </Link>
                   ))}
                 </nav>
               </div>
@@ -192,17 +196,17 @@ const Navbar = () => {
                   <div className="search-results-grid">
                     {filteredItems.map((item) => (
                       <div key={item.id} className="search-result-card">
-                        <a 
-                          href={item.path} 
+                        <Link 
+                          to={item.path}
                           className="search-result-link"
-                          onClick={(e) => handleLinkClick(item.path, e)}
+                          onClick={closeMenu}
                         >
                           <h3 className="search-result-title">{item.title}</h3>
                           <p className="search-result-description">{item.description}</p>
                           <div className="visit-page-button">
-                            Visit Page →
+                            Visit Page
                           </div>
-                        </a>
+                        </Link>
                       </div>
                     ))}
                   </div>
@@ -217,17 +221,17 @@ const Navbar = () => {
                   <div className="subcategories-grid">
                     {selectedCategory.subcategories.map((subcategory) => (
                       <div key={subcategory.id} className="subcategory-card">
-                        <a 
-                          href={subcategory.path} 
+                        <Link 
+                          to={subcategory.path}
                           className="subcategory-link"
-                          onClick={(e) => handleLinkClick(subcategory.path, e)}
+                          onClick={closeMenu}
                         >
                           <h3 className="subcategory-title">{subcategory.title}</h3>
                           <p className="subcategory-description">{subcategory.description}</p>
                           <div className="visit-page-button">
-                            Visit Page →
+                            Visit Page
                           </div>
-                        </a>
+                        </Link>
                       </div>
                     ))}
                   </div>

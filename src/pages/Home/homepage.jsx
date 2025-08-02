@@ -45,20 +45,12 @@ Formalizing Emergent Reasoning Zones
             </p>
             <div className="hero-cta">
               <button className="cta-button">
-                Get in touch
+                IP Portfolio
                 <ArrowRight size={18} className="cta-icon" />
               </button>
               <a href="#work" className="secondary-button">
-                View our work
+                Our Services
               </a>
-            </div>
-          </div>
-          <div className="hero-image">
-            <div className="image-placeholder">
-              {/* Replace with actual image */}
-              <div className="placeholder-content">
-                {/* <span>Hero Image</span> */}
-              </div>
             </div>
           </div>
         </div>

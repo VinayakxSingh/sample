@@ -169,3 +169,7 @@
   font-style: normal;
   font-display: swap;
 }
+::selection {
+  background: #222;
+  color: #fff;
+}

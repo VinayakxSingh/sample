@@ -27,7 +27,7 @@ const ComingSoon = ({
         
         <div className="coming-soon-countdown">
           <div className="countdown-item">
-            <span className="countdown-number">00</span>
+            <span className="countdown-number">05</span>
             <span className="countdown-label">Days</span>
           </div>
           <div className="countdown-separator">:</div>

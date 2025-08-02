@@ -169,7 +169,76 @@
   font-style: normal;
   font-display: swap;
 }
+/* Custom Selection Styling */
 ::selection {
   background: #222;
   color: #fff;
+  text-shadow: none;
+}
+
+/* Scrollbar Styling */
+/* Width */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f8f9fa;
+  border-left: 1px solid #e9ecef;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #191919;
+  border-radius: 6px;
+  border: 3px solid #f8f9fa;
+  transition: all 0.3s ease;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #191919;
+}
+
+/* Handle when being dragged */
+::-webkit-scrollbar-thumb:active {
+  background: #191919;
+}
+
+/* Corner */
+::-webkit-scrollbar-corner {
+  background: #f8f9fa;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #d1d5db #f8f9fa;
+}
+
+/* For dark mode support */
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-track {
+    background: #1f2937;
+    border-left: 1px solid #374151;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #4b5563;
+    border-color: #1f2937;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #6b7280;
+  }
+  
+  ::-webkit-scrollbar-thumb:active {
+    background: #9ca3af;
+  }
+  
+  * {
+    scrollbar-color: #4b5563 #1f2937;
+  }
 }

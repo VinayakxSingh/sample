@@ -1,6 +1,6 @@
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import HomePage from '../pages/Home/homepage';
-import { ProductPage as ProductsIndex } from '../pages/Products';
+import ProductPage from '../pages/products/products-overview';
 import { ServicePage as ServicesIndex } from '../pages/Services';
 import { MethodologyPage as MethodologiesIndex } from '../pages/Methodologies';
 
@@ -10,10 +10,12 @@ const Routing = () => {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
+      <Route path="/home" element={<HomePage />} />
       
       {/* Products Routes */}
-      <Route path="/products" element={<ProductsIndex />} />
-      <Route path="/products/:productId" element={<ProductsIndex />} />
+      <Route path="/products" element={<ProductPage />} />
+      <Route path="/products/:productId" element={<ProductPage />} />
+
       
       {/* Services Routes */}
       <Route path="/services" element={<ServicesIndex />} />

@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowRight, ShieldCheck, Target, Cpu, Lock, BookOpenCheck, BrainCircuit, CpuIcon, Code, Gauge, FileCode } from 'lucide-react';
-import Threads from '../../components/threads/threads';
-import { CardCarousel } from '../../components/reusables/articlesCarousels';
+import Threads from '../../components/reusables/threads/threads';
+import { CardCarousel } from '../../components/reusables/ArticleCarousel/articlesCarousels';
 import './homepage.css';
 
 const carouselImages = [

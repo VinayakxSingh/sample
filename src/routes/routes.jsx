@@ -14,6 +14,7 @@ const Routing = () => {
       
       {/* Products Routes */}
       <Route path="/products" element={<ProductPage />} />
+      <Route path="/product" element={<ProductPage />} />
       <Route path="/products/:productId" element={<ProductPage />} />
 
       

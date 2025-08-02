@@ -1,7 +1,7 @@
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import HomePage from '../pages/Home/homepage';
 import ProductPage from '../pages/products/products-overview';
-import ServicePage from '../pages/Services/index';
+import ServicePage from '../pages/services/index';
 import MethodologyPage from '../pages/methodologies/index';
 
 const Routing = () => {

@@ -1,7 +1,7 @@
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import HomePage from '../pages/Home/homepage';
 import ProductPage from '../pages/products/products-overview';
-import { ServicePage as ServicesIndex } from '../pages/Services';
+import { ServicePage  } from '../pages/Services';
 import { MethodologyPage as MethodologiesIndex } from '../pages/Methodologies';
 
 const Routing = () => {
@@ -18,8 +18,8 @@ const Routing = () => {
 
       
       {/* Services Routes */}
-      <Route path="/services" element={<ServicesIndex />} />
-      <Route path="/services/:serviceId" element={<ServicesIndex />} />
+      <Route path="/services" element={<ServicePage />} />
+      <Route path="/services/:serviceId" element={<ServicePage />} />
       
       {/* Methodologies Routes */}
       <Route path="/methodologies" element={<MethodologiesIndex />} />

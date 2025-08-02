@@ -1,5 +1,5 @@
 import { useRef, useEffect } from "react";
-import './Waves.css';
+import './waves.css';
 
 class Grad {
   constructor(x, y, z) {

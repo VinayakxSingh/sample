@@ -1,0 +1,86 @@
+/* 404 Page Styles */
+.not-found-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 2rem;
+  text-align: center;
+  background-color: var(--light-bg);
+  font-family: "Panchang";
+  font-weight: 600;
+
+}
+
+.not-found-content {
+  max-width: 600px;
+  padding: 3rem;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.not-found-title {
+  font-size: 8rem;
+  font-weight: 800;
+  margin: 0;
+  background: linear-gradient(135deg, #000000, #333333);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+}
+
+.not-found-subtitle {
+  font-size: 2rem;
+  margin: 1rem 0 0.5rem;
+  color: var(--primary-color);
+}
+
+.not-found-text {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.not-found-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #000000, #333333);
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.not-found-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.not-found-button:active {
+  transform: translateY(1px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .not-found-title {
+    font-size: 6rem;
+  }
+  
+  .not-found-subtitle {
+    font-size: 1.75rem;
+  }
+  
+  .not-found-content {
+    padding: 2rem 1.5rem;
+  }
+}

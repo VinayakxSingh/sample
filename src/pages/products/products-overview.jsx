@@ -217,7 +217,7 @@ const ProductPage = () => {
           <div className="hero-cta">
             <a href="#contact" className="btn">
               Get Started
-              <ArrowRight size={18} className="ml-2" />
+              <ArrowRight size={18} className="arrow-icon" />
             </a>
           </div>
         </div>

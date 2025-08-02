@@ -188,10 +188,10 @@ const ProductPage = () => {
   ];
 
   return (
-    <div className="products-overview">
+    <div className="prod-products-overview">
       {/* Hero Section */}
-      <section className="products-hero">
-        <div className="waves-container">
+      <section className="prod-products-hero">
+        <div className="prod-waves-container">
           <Waves 
             lineColor="#fff" 
             backgroundColor="#000"
@@ -206,57 +206,60 @@ const ProductPage = () => {
             maxCursorMove={100}
           />
         </div>
-        <div className="hero-content">
-          <h1 className="hero-title">
+        <div className="prod-hero-content">
+          <h1 className="prod-hero-title">
             The Future of AI is Deterministic
           </h1>
-          <p className="hero-subtitle">
+          <p className="prod-hero-subtitle">
             Our comprehensive suite of AI governance and safety solutions ensures reliable, 
             transparent, and ethical AI systems at scale.
           </p>
-          <div className="hero-cta">
-            <a href="#contact" className="btn">
+          <div className="prod-hero-cta">
+            <a href="#contact" className="prod-btn">
               Get Started
-              <ArrowRight size={18} className="arrow-icon" />
+              <ArrowRight size={18} className="ml-2" />
             </a>
           </div>
         </div>
       </section>
 
-      <div className="container">
+      <div className="prod-container">
         {/* Intro Text */}
-        <section className="section">
-          <div className="content-section">
-            <p>
+        <section className="prod-section">
+          <div className="prod-content-section">
+            <h2 className="prod-intro-title">
+              Leading the Future of <span className="gradient-text">AI Governance</span>
+            </h2>
+            <p className="prod-intro-text">
               FERZ delivers a comprehensive suite of AI governance and safety solutions designed to 
               ensure reliable, transparent, and ethical AI systems at scale. Our platform provides 
-              the tools and frameworks needed to build, deploy, and manage AI systems with 
-              confidence.
+              the tools and frameworks needed to build, deploy, and manage AI systems with confidence.
             </p>
+            <div className="prod-intro-divider"></div>
           </div>
         </section>
 
         {/* Product Suite Section */}
-        <section className="section" id="products">
-          <h2 className="section-title">Our Product Suite</h2>
-          <p className="section-subtitle">
+        <section className="prod-section" id="products">
+          <h2 className="prod-section-title">Our Product Suite</h2>
+          <p className="prod-section-subtitle">
             Comprehensive solutions for building and managing safe, reliable, and ethical AI systems at scale.
           </p>
           
-          <div className="product-list">
+          <div className="prod-product-list">
             {productSuite.map((product) => (
-              <div key={product.id} className="product-item">
-                <div className="product-header">
-                  <span className="product-number">0{product.id}</span>
+              <div key={product.id} className="prod-product-item">
+                <div className="prod-product-header">
+                  <span className="prod-product-number">0{product.id}</span>
                   <div>
-                    <h3 className="product-name">{product.name}</h3>
-                    <p className="product-fullname">{product.fullName}</p>
+                    <h3 className="prod-product-name">{product.name}</h3>
+                    <p className="prod-product-fullname">{product.fullName}</p>
                   </div>
                 </div>
-                <p className="product-description">{product.description}</p>
-                <ul className="feature-list">
+                <p className="prod-product-description">{product.description}</p>
+                <ul className="prod-feature-list">
                   {product.features.map((feature, index) => (
-                    <li key={index} className="feature-item">
+                    <li key={index} className="prod-feature-item">
                       {feature}
                     </li>
                   ))}
@@ -267,15 +270,15 @@ const ProductPage = () => {
         </section>
 
         {/* Use Cases Section */}
-        <section className="section" id="use-cases">
-          <h2 className="section-title">Use Cases</h2>
-          <p className="section-subtitle">
+        <section className="prod-section" id="use-cases">
+          <h2 className="prod-section-title">Use Cases</h2>
+          <p className="prod-section-subtitle">
             Empowering industries with safe and reliable AI solutions for critical applications.
           </p>
           
-          <div className="use-cases">
+          <div className="prod-use-cases">
             {useCases.map((useCase) => (
-              <div key={useCase.id} className="use-case">
+              <div key={useCase.id} className="prod-use-case">
                 <h3>
                   {useCase.icon}
                   {useCase.title}
@@ -287,19 +290,19 @@ const ProductPage = () => {
         </section>
 
         {/* Design Principles Section */}
-        <section className="section" id="principles">
-          <h2 className="section-title">Design Principles</h2>
-          <p className="section-subtitle">
+        <section className="prod-section" id="principles">
+          <h2 className="prod-section-title">Design Principles</h2>
+          <p className="prod-section-subtitle">
             Our core principles guide every aspect of our technology and solutions.
           </p>
           
-          <div className="principles">
+          <div className="prod-principles">
             {principles.map((principle) => (
-              <div key={principle.id} className="principle">
-                <div className="principle-icon">
+              <div key={principle.id} className="prod-principle">
+                <div className="prod-principle-icon">
                   {principle.icon}
                 </div>
-                <div className="principle-content">
+                <div className="prod-principle-content">
                   <h3>{principle.title}</h3>
                   <p>{principle.description}</p>
                 </div>
@@ -309,15 +312,15 @@ const ProductPage = () => {
         </section>
 
         {/* Deployment Options Section */}
-        <section className="section" id="deployment">
-          <h2 className="section-title">Deployment Flexibility</h2>
-          <p className="section-subtitle">
+        <section className="prod-section" id="deployment">
+          <h2 className="prod-section-title">Deployment Flexibility</h2>
+          <p className="prod-section-subtitle">
             Choose the deployment option that best fits your organization's needs.
           </p>
           
-          <div className="deployment-options">
+          <div className="prod-deployment-options">
             {deploymentOptions.map((option) => (
-              <div key={option.id} className="deployment-option">
+              <div key={option.id} className="prod-deployment-option">
                 <h3>
                   {option.icon}
                   {option.title}

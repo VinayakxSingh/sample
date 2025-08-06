@@ -52,12 +52,13 @@
 }
 
 .hero-title {
-  font-family: 'ClashDisplay', sans-serif;
-  font-size: 3.5rem;
-  font-weight: 600;
-  line-height: 1.2;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(3rem, 5vw, 3.75rem);
+  font-weight: 700;
+  line-height: 1.1;
   margin-bottom: 1.5rem;
   color: #000;
+  letter-spacing: -0.02em;
 }
 
 .highlight {
@@ -79,8 +80,9 @@
 }
 
 .hero-subtitle {
-  font-family: 'Satoshi', sans-serif;
-  font-size: 1.25rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1.125rem;
   line-height: 1.6;
   color: #333;
   margin-bottom: 2.5rem;
@@ -97,16 +99,18 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.875rem 2rem;
+  padding: 0.75rem 1.5rem;
   background-color: #000;
   color: white;
   border: none;
   border-radius: 4px;
-  font-family: 'ClashDisplay', sans-serif;
-  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  letter-spacing: 0.03em;
+  line-height: 1.4;
 }
 
 .cta-button:hover {
@@ -123,13 +127,15 @@
 }
 
 .secondary-button {
-  font-family: 'ClashDisplay', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 500;
   color: #000;
   text-decoration: none;
   padding: 0.875rem 0;
   position: relative;
   transition: all 0.3s ease;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
 }
 
 .secondary-button::after {
@@ -161,14 +167,14 @@
 }
 
 .section-title {
-  font-family: 'ClashDisplay';
-  font-size: 2.5rem;
-  font-weight: 520;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(2.25rem, 4vw, 2.625rem);
+  font-weight: 600;
   margin-bottom: 3rem;
-  text-transform: uppercase;
   text-align: center;
   color: #000;
-  line-height: 1.2;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
 }
 
 .intelligence-content {
@@ -177,9 +183,10 @@
 }
 
 .intelligence-paragraph {
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
   font-size: 1.125rem;
-  line-height: 1.8;
+  line-height: 1.6;
   color: #333;
   margin-bottom: 1.5rem;
 }
@@ -224,14 +231,16 @@
 }
 
 .feature-item h3 {
-  font-family: 'ClashDisplay', sans-serif;
-  font-size: 1.25rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 500;
   margin-bottom: 0.75rem;
   color: #000;
+  line-height: 1.3;
 }
 
 .feature-item p {
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.95rem;
   color: #555;
   line-height: 1.6;
@@ -243,9 +252,9 @@
   border-top: 1px solid #eee;
 }
 .cta-text1 {
-  font-family: 'ClashDisplay', sans-serif;
-  font-size: 1.25rem;
-  font-weight: 400;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 500;
   line-height: 1.6;
   color: #000;
   margin-top: 2rem;
@@ -255,8 +264,8 @@
   text-align: center;
 }
 .cta-text {
-  font-family: 'Satoshi', sans-serif;
-  font-size: 1.25rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.75rem;
   font-weight: 500;
   color: #000;
   margin-top: 2rem;
@@ -334,7 +343,7 @@
 
 .swiper-button-next:after,
 .swiper-button-prev:after {
-  font-size: 1.5rem;
+  font-size: 1.875rem;
   font-weight: bold;
 }
 
@@ -415,15 +424,16 @@
 }
 
 .solution-title {
-  font-family: 'ClashDisplay', sans-serif;
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.875rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
   color: #000;
+  line-height: 1.3;
 }
 
 .solution-description {
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Inter', sans-serif;
   color: #666;
   line-height: 1.6;
   margin: 0;
@@ -454,8 +464,8 @@
   
   
   .hero-subtitle {
-    font-family: 'Satoshi', sans-serif;
-    font-size: 1.25rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.75rem;
     line-height: 1.6;
     color: #333;
     margin-bottom: 2.5rem;
@@ -477,11 +487,12 @@
     color: white;
     border: none;
     border-radius: 4px;
-    font-family: 'ClashDisplay', sans-serif;
-    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s ease;
+    letter-spacing: 0.03em;
   }
   
   .cta-button:hover {
@@ -498,13 +509,14 @@
   }
   
   .secondary-button {
-    font-family: 'ClashDisplay', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 500;
     color: #000;
     text-decoration: none;
     padding: 0.875rem 0;
     position: relative;
     transition: all 0.3s ease;
+    letter-spacing: 0.02em;
   }
   
   .secondary-button::after {

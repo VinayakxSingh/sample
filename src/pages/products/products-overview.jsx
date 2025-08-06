@@ -207,7 +207,7 @@ const ProductPage = () => {
           />
         </div>
         <div className="prod-hero-content">
-          <h1 className="prod-hero-title" style={{fontFamily:"Inter",fontWeight:"bold"}}>
+          <h1 className="prod-hero-title" >
             The Future of AI is Deterministic
           </h1>
           <p className="prod-hero-subtitle">

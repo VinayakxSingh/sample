@@ -33,7 +33,7 @@
 }
 
 .footer-heading {
-  font-family: 'ClashDisplay', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
@@ -53,7 +53,7 @@
 }
 
 .footer-text {
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.95rem;
   line-height: 1.7;
   color: #ccc;
@@ -74,7 +74,7 @@
 .footer-links li {
   color: #bbb;
   text-decoration: none;
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.95rem;
   transition: color 0.3s ease;
   display: block;
@@ -94,7 +94,7 @@
   align-items: flex-start;
   margin-bottom: 1rem;
   color: #bbb;
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.95rem;
   line-height: 1.6;
 }
@@ -130,7 +130,7 @@
 }
 
 .footer-logo h2 {
-  font-family: 'ClashDisplay', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 2rem;
   font-weight: 700;
   color: #fff;
@@ -139,7 +139,7 @@
 }
 
 .footer-logo p {
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Inter', sans-serif;
   color: #999;
   font-size: 0.9rem;
   margin: 0.3rem 0 0;
@@ -147,8 +147,9 @@
 }
 
 .quick-links h4 {
-  font-family: 'ClashDisplay', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.1rem;
+  font-weight: 500;
   margin-bottom: 1rem;
   color: #fff;
 }
@@ -162,7 +163,7 @@
 .quick-links a {
   color: #bbb;
   text-decoration: none;
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.9rem;
   transition: color 0.3s ease;
   display: inline-block;
@@ -187,7 +188,7 @@
 
 .copyright p {
   color: #999;
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.85rem;
   margin: 0;
 }
@@ -200,7 +201,7 @@
 .legal-links a {
   color: #999;
   text-decoration: none;
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.85rem;
   transition: color 0.3s ease;
 }

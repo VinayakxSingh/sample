@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://ferz.ai/sitemap.xml
+
+# Disallow admin or private areas (if any)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+
+# Crawl delay (optional)
+Crawl-delay: 1 

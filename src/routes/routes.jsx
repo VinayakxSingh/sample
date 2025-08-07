@@ -1,9 +1,11 @@
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom';
 import HomePage from '../pages/Home/homepage';
 import ProductPage from '../pages/products/products-overview';
-import ServicePage from '../pages/services/index';
-import MethodologyPage from '../pages/methodologies/index';
-import NotFound from '../pages/NotFound';
+import MethodologyPage from '../pages/methodologies/methodologies-overview';
+import IPPortfolio from '../pages/IPPortfolio/ip-portfolio';
+import Articles from '../pages/Articles/Articles';
+import ArticleDetail from '../pages/ArticleDetail/ArticleDetail';
+import NotFound from '../pages/NotFound/not-found';
 
 const Routing = () => {
   const navigate = useNavigate();
@@ -16,16 +18,16 @@ const Routing = () => {
       {/* Products Routes */}
       <Route path="/products" element={<ProductPage />} />
       <Route path="/product" element={<ProductPage />} />
-      <Route path="/products/:productId" element={<ProductPage />} />
-
-      
-      {/* Services Routes */}
-      <Route path="/services" element={<ServicePage />} />
-      <Route path="/services/:serviceId" element={<ServicePage />} />
       
       {/* Methodologies Routes */}
-      <Route path="/methodologies" element={<MethodologyPage/>} />
-      <Route path="/methodologies/:methodologyId" element={<MethodologyPage />} />
+      <Route path="/methodologies" element={<MethodologyPage/>} />     
+      
+      {/* IP Portfolio Routes */}
+      <Route path="/ip-portfolio" element={<IPPortfolio />} />
+      
+      {/* Articles Routes */}
+      <Route path="/articles" element={<Articles />} />
+      <Route path="/articles/:slug" element={<ArticleDetail />} />
       
       {/* 404 Route - Catch all undefined routes */}
       <Route path="/404" element={<NotFound />} />

@@ -130,6 +130,12 @@ export const sitemapData = {
       description: 'Welcome to FERZ Consulting'
     },
     {
+      id: 'ip-portfolio',
+      title: 'IP Portfolio',
+      path: '/ip-portfolio',
+      description: 'Explore FERZ\'s intellectual property portfolio and governance frameworks.'
+    },
+    {
       id: 'about-us',
       title: 'About Us',
       path: '/about-us',

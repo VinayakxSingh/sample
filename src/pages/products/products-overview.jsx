@@ -2,6 +2,8 @@ import React from 'react';
 import { ArrowRight, Check, Cloud, Shield, Cpu, CpuIcon, Code, Brain, Scale, Activity, Database, Zap, Server, Lock, Cpu as CpuIcon2, Network, 
     Wifi, HardDrive, GitMerge ,HeartPulse,BarChart3,BrainCircuit} from 'lucide-react';
 import Waves from '../../components/reusables/waves/waves';
+import SEO from '../../components/SEO/SEO';
+import Breadcrumb from '../../components/SEO/Breadcrumb';
 import './products-overview.css';
 
 const ProductPage = () => {
@@ -187,11 +189,44 @@ const ProductPage = () => {
     }
   ];
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "FERZ AI Governance Products",
+    "description": "Comprehensive suite of AI governance and safety solutions for building reliable, transparent, and ethical AI systems.",
+    "itemListElement": [
+      {
+        "@type": "Product",
+        "name": "DELIA",
+        "description": "Deterministic Executive Layer for Interpretable Alignment - Govern how AI transforms language."
+      },
+      {
+        "@type": "Product", 
+        "name": "LASO(f)",
+        "description": "The Language Constitution for AI - Govern what AI says."
+      },
+      {
+        "@type": "Product",
+        "name": "LASO(f)-AG", 
+        "description": "LASO Framework - Air-Gapped Edition for secure, isolated deployment."
+      }
+    ]
+  };
+
   return (
-    <div className="prod-products-overview">
-      {/* Hero Section */}
-      <section className="prod-products-hero">
-        <div className="prod-waves-container">
+    <>
+      <SEO
+        title="AI Governance Products & Solutions"
+        description="Comprehensive suite of AI governance and safety solutions. DELIA, LASO(f), STRATA-G, and more for building reliable, ethical AI systems."
+        keywords="AI governance products, DELIA, LASO, AI safety solutions, deterministic AI, ethical AI systems, AI compliance tools"
+        url="/products"
+        structuredData={structuredData}
+            />
+      <main className="prod-products-overview" role="main" aria-labelledby="products-hero-title">
+        <Breadcrumb />
+        {/* Hero Section */}
+        <section className="prod-products-hero" aria-labelledby="products-hero-title">
+        <div className="prod-waves-container" aria-hidden="true">
           <Waves 
             lineColor="#fff" 
             backgroundColor="#000"
@@ -207,7 +242,7 @@ const ProductPage = () => {
           />
         </div>
         <div className="prod-hero-content">
-          <h1 className="prod-hero-title" >
+          <h1 className="prod-hero-title" id="products-hero-title">
             The Future of AI is Deterministic
           </h1>
           <p className="prod-hero-subtitle">
@@ -215,9 +250,9 @@ const ProductPage = () => {
             transparent, and ethical AI systems at scale.
           </p>
           <div className="prod-hero-cta">
-            <a href="#contact" className="prod-btn">
+            <a href="#contact" className="prod-btn" aria-label="Get started with our products">
               Get Started
-              <ArrowRight size={18} className="ml-2" />
+              <ArrowRight size={18} className="ml-2" aria-hidden="true" />
             </a>
           </div>
         </div>
@@ -240,26 +275,26 @@ const ProductPage = () => {
         </section>
 
         {/* Product Suite Section */}
-        <section className="prod-section" id="products">
-          <h2 className="prod-section-title">Our Product Suite</h2>
+        <section className="prod-section" id="products" aria-labelledby="products-section-title">
+          <h2 className="prod-section-title" id="products-section-title">Our Product Suite</h2>
           <p className="prod-section-subtitle">
             Comprehensive solutions for building and managing safe, reliable, and ethical AI systems at scale.
           </p>
           
-          <div className="prod-product-list">
+          <div className="prod-product-list" role="list" aria-label="Product suite list">
             {productSuite.map((product) => (
-              <div key={product.id} className="prod-product-item">
+              <div key={product.id} className="prod-product-item" role="listitem">
                 <div className="prod-product-header">
-                  <span className="prod-product-number">0{product.id}</span>
+                  <span className="prod-product-number" aria-label={`Product ${product.id}`}>0{product.id}</span>
                   <div>
                     <h3 className="prod-product-name">{product.name}</h3>
                     <p className="prod-product-fullname">{product.fullName}</p>
                   </div>
                 </div>
                 <p className="prod-product-description">{product.description}</p>
-                <ul className="prod-feature-list">
+                <ul className="prod-feature-list" role="list" aria-label={`${product.name} features`}>
                   {product.features.map((feature, index) => (
-                    <li key={index} className="prod-feature-item">
+                    <li key={index} className="prod-feature-item" role="listitem">
                       {feature}
                     </li>
                   ))}
@@ -331,7 +366,8 @@ const ProductPage = () => {
           </div>
         </section>
       </div>
-    </div>
+      </main>
+    </>
   );
 };
 

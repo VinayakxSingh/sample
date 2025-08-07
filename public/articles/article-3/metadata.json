@@ -1,0 +1,13 @@
+{
+  "id": "article-3",
+  "title": "Ethical AI Implementation",
+  "description": "Ensuring ethical considerations in AI system development and deployment",
+  "author": "Edward Meyman",
+  "date": "2025-01-25",
+  "category": "AI Ethics",
+  "tags": ["AI", "Ethics", "Responsibility", "Bias", "Fairness"],
+  "featured": false,
+  "readTime": "6 min read",
+  "image": "image.jpg",
+  "slug": "ethical-ai-implementation"
+} 

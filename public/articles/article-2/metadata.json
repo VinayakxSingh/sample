@@ -1,0 +1,13 @@
+{
+  "id": "article-2",
+  "title": "Deterministic AI Systems",
+  "description": "Building reliable and predictable AI systems for critical applications",
+  "author": "Edward Meyman",
+  "date": "2025-01-20",
+  "category": "AI Development",
+  "tags": ["AI", "Deterministic", "Reliability", "Machine Learning"],
+  "featured": true,
+  "readTime": "7 min read",
+  "image": "image.jpg",
+  "slug": "deterministic-ai-systems"
+} 

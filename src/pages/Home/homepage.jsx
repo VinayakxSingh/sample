@@ -1,32 +1,45 @@
 import React from 'react';
 import { ArrowRight, ShieldCheck, Target, Cpu, Lock, BookOpenCheck, BrainCircuit, CpuIcon, Code, Gauge, FileCode } from 'lucide-react';
+import { useNavigate,Link } from 'react-router-dom';
 import Threads from '../../components/reusables/threads/threads';
-import { CardCarousel } from '../../components/reusables/ArticleCarousel/articlesCarousels';
+import ArticlesCarousel from '../../components/reusables/ArticleCarousel/ArticlesCarousel';
+import SEO from '../../components/SEO/SEO';
 import './homepage.css';
 
-const carouselImages = [
-  {
-    src: 'https://ferzconsulting.com/wp-content/uploads/2025/07/WhatsApp-Image-2025-07-14-at-5.16.03-PM.jpeg',
-    alt: 'AI Consulting Services'
-  },
-  {
-    src: 'https://ferzconsulting.com/wp-content/uploads/2025/06/WhatsApp-Image-2025-06-16-at-11.44.54-PM.jpeg',
-    alt: 'Data Analytics Solutions'
-  },
-  {
-    src: 'https://ferzconsulting.com/wp-content/uploads/2025/06/WhatsApp-Image-2025-06-12-at-12.35.07-AM.jpeg',
-    alt: 'Machine Learning Implementation'
-  },
-  {
-    src: 'https://ferzconsulting.com/wp-content/uploads/2025/06/ai.jpg',
-    alt: 'Artificial Intelligence Innovation'
-  }
-];
+
 
 const HomePage = () => {
+  const navigate = useNavigate();
+  
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "FERZ - Formalizing Emergent Reasoning Zones",
+    "description": "Leading AI governance and safety solutions for deterministic, reliable, and ethical AI systems at scale.",
+    "url": "https://ferz.ai",
+    "logo": "https://ferz.ai/logo.png",
+    "sameAs": [
+      "https://twitter.com/ferz_ai",
+      "https://linkedin.com/company/ferz-ai"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "email": "contact@ferz.ai"
+    }
+  };
+
   return (
-    <div className="homepage">
-      <div className="threads-background">
+    <>
+      <SEO
+        title="AI Governance & Safety Solutions"
+        description="FERZ delivers deterministic AI governance and safety solutions. Transform probabilistic AI into reliable, ethical systems with our comprehensive frameworks and methodologies."
+        keywords="AI governance, AI safety, deterministic AI, ethical AI, AI compliance, machine learning governance, AI risk management"
+        url="/"
+        structuredData={structuredData}
+      />
+      <main className="homepage" role="main" aria-labelledby="hero-title">
+      <div className="threads-background" aria-hidden="true">
         <Threads
           amplitude={1}
           distance={0}
@@ -34,21 +47,25 @@ const HomePage = () => {
           color={[0, 0, 0]}
         />
       </div>
-      <section className="hero">
+      <section className="hero" aria-labelledby="hero-title">
         <div className="hero-content">
           <div className="hero-text">
-            <h1 className="hero-title">
+            <h1 className="hero-title" id="hero-title">
              FERZ
             </h1>
             <p className="hero-subtitle">
 Formalizing Emergent Reasoning Zones          
             </p>
             <div className="hero-cta">
-              <button className="cta-button">
+              <button 
+                className="cta-button" 
+                aria-label="View our IP portfolio"
+                onClick={() => navigate('/ip-portfolio')}
+              >
                 IP Portfolio
-                <ArrowRight size={18} className="cta-icon" />
+                <ArrowRight size={18} className="cta-icon" aria-hidden="true" />
               </button>
-              <a href="#work" className="secondary-button">
+              <a href="#work" className="secondary-button" aria-label="Learn about our services">
                 Our Services
               </a>
             </div>
@@ -122,12 +139,11 @@ Formalizing Emergent Reasoning Zones
       </section>
       <section className="carousel-section">
         <div className="container">
-          <h2 className="section-title">Explore Our Articles</h2>
-          <CardCarousel 
-            images={carouselImages} 
+          <ArticlesCarousel 
             autoplayDelay={3000}
             showPagination={true}
             showNavigation={true}
+            maxArticles={6}
           />
         </div>
       </section>
@@ -179,7 +195,8 @@ Formalizing Emergent Reasoning Zones
           </div>
         </div>
       </section>
-    </div>
+      </main>
+    </>
   );
 };
 

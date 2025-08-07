@@ -1,0 +1,13 @@
+{
+  "id": "article-1",
+  "title": "AI Governance Best Practices",
+  "description": "Essential frameworks for deterministic AI systems in regulated environments",
+  "author": "Edward Meyman",
+  "date": "2025-01-15",
+  "category": "AI Governance",
+  "tags": ["AI", "Governance", "Safety", "Compliance"],
+  "featured": true,
+  "readTime": "5 min read",
+  "image": "image.jpg",
+  "slug": "ai-governance-best-practices"
+} 

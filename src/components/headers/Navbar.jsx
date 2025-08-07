@@ -79,14 +79,17 @@ const Navbar = () => {
   return (
     <>
       {/* Main Navbar */}
-      <nav className="navbar">
+      <nav className="navbar" role="navigation" aria-label="Main navigation">
         <div className="navbar-container">
           <button
             onClick={toggleMenu}
             className="menu-button"
-            aria-label="Toggle menu"
+            aria-label="Toggle navigation menu"
+            aria-expanded={isMenuOpen}
+            aria-controls="overlay-menu"
+            aria-haspopup="true"
           >
-            <Menu size={24} />
+            <Menu size={24} aria-hidden="true" />
           </button>
 
           <div className="logo-container">
@@ -94,6 +97,7 @@ const Navbar = () => {
               to="/" 
               className="logo"
               onClick={closeMenu}
+              aria-label="FERZ - Go to homepage"
             >
               FERZ
             </Link>
@@ -102,6 +106,7 @@ const Navbar = () => {
           <button 
             className="contact-button"
             onClick={(e) => handleLinkClick('/contact-us', e)}
+            aria-label="Contact us"
           >
             Contact Us
           </button>
@@ -110,14 +115,20 @@ const Navbar = () => {
 
       {/* Full Screen Overlay Menu */}
       {isMenuOpen && (
-        <div className="overlay-menu">
+        <div 
+          className="overlay-menu" 
+          id="overlay-menu"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Navigation menu"
+        >
           <div className="overlay-header">
             <button
               onClick={closeMenu}
               className="close-button"
-              aria-label="Close menu"
+              aria-label="Close navigation menu"
             >
-              <X size={24} />
+              <X size={24} aria-hidden="true" />
             </button>
 
             <div className="overlay-logo-container">
@@ -125,25 +136,31 @@ const Navbar = () => {
                 to="/" 
                 className="overlay-logo"
                 onClick={closeMenu}
+                aria-label="FERZ - Go to homepage"
               >
                 FERZ
               </Link>
             </div>
 
-            <form onSubmit={handleSearchSubmit} className="search-container">
-              <Search size={18} className="search-icon" />
+            <form onSubmit={handleSearchSubmit} className="search-container" role="search">
+              <label htmlFor="search-input" className="sr-only">Search</label>
+              <Search size={18} className="search-icon" aria-hidden="true" />
               <input
+                id="search-input"
                 type="text"
                 placeholder="Search"
                 className="search-input"
                 value={searchQuery}
                 onChange={handleSearchChange}
+                aria-label="Search website content"
+                aria-describedby="search-results-count"
               />
             </form>
 
             <button 
               className="overlay-contact-button"
               onClick={(e) => handleLinkClick('/contact-us', e)}
+              aria-label="Contact us"
             >
               Contact Us
             </button>
@@ -153,12 +170,15 @@ const Navbar = () => {
             <div className="sidebar">
               <div className="sidebar-content">
                 <h2 className="sidebar-title">Services</h2>
-                <nav className="nav-section">
+                <nav className="nav-section" aria-label="Services navigation">
                   {sitemapData.mainCategories.map((category) => (
                     <button
                       key={category.id}
                       className={`nav-link ${selectedCategory?.id === category.id ? 'nav-link-active' : ''}`}
                       onClick={() => handleCategoryClick(category)}
+                      aria-expanded={selectedCategory?.id === category.id}
+                      aria-controls={`category-${category.id}`}
+                      aria-label={`${category.title} - ${selectedCategory?.id === category.id ? 'expanded' : 'collapsed'}`}
                     >
                       {category.title}
                     </button>
@@ -166,13 +186,14 @@ const Navbar = () => {
                 </nav>
 
                 <h2 className="sidebar-title sidebar-title-secondary">Company</h2>
-                <nav className="nav-section">
+                <nav className="nav-section" aria-label="Company pages navigation">
                   {sitemapData.companyPages.filter(page => page.id !== 'home').map((page) => (
                     <Link
                       key={page.id}
                       to={page.path}
                       className="nav-link"
                       onClick={closeMenu}
+                      aria-label={`Go to ${page.title} page`}
                     >
                       {page.title}
                     </Link>
@@ -183,52 +204,54 @@ const Navbar = () => {
 
             <div className="content-area">
               {searchQuery.trim() && filteredItems ? (
-                <div className="search-results">
-                  <div className="search-results-header">
-                    <h2 className="search-results-title">
-                      Search Results for "{searchQuery}"
-                    </h2>
-                    <p className="search-results-count">
-                      {filteredItems.length} result{filteredItems.length !== 1 ? 's' : ''}
-                    </p>
+                                  <div className="search-results" role="region" aria-label="Search results">
+                    <div className="search-results-header">
+                      <h2 className="search-results-title">
+                        Search Results for "{searchQuery}"
+                      </h2>
+                      <p className="search-results-count" id="search-results-count">
+                        {filteredItems.length} result{filteredItems.length !== 1 ? 's' : ''}
+                      </p>
+                    </div>
+                    
+                    <div className="search-results-grid" role="list" aria-label="Search results list">
+                      {filteredItems.map((item) => (
+                        <div key={item.id} className="search-result-card" role="listitem">
+                          <Link 
+                            to={item.path}
+                            className="search-result-link"
+                            onClick={closeMenu}
+                            aria-label={`Go to ${item.title} page`}
+                          >
+                            <h3 className="search-result-title">{item.title}</h3>
+                            <p className="search-result-description">{item.description}</p>
+                            <div className="visit-page-button" aria-hidden="true">
+                              Visit Page
+                            </div>
+                          </Link>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                  
-                  <div className="search-results-grid">
-                    {filteredItems.map((item) => (
-                      <div key={item.id} className="search-result-card">
-                        <Link 
-                          to={item.path}
-                          className="search-result-link"
-                          onClick={closeMenu}
-                        >
-                          <h3 className="search-result-title">{item.title}</h3>
-                          <p className="search-result-description">{item.description}</p>
-                          <div className="visit-page-button">
-                            Visit Page
-                          </div>
-                        </Link>
-                      </div>
-                    ))}
-                  </div>
-                </div>
               ) : selectedCategory ? (
-                <div className="category-content">
+                <div className="category-content" id={`category-${selectedCategory.id}`} role="region" aria-label={`${selectedCategory.title} content`}>
                   <div className="category-header">
                     <h2 className="category-title">{selectedCategory.title}</h2>
                     <p className="category-description">{selectedCategory.description}</p>
                   </div>
                   
-                  <div className="subcategories-grid">
+                  <div className="subcategories-grid" role="list" aria-label={`${selectedCategory.title} subcategories`}>
                     {selectedCategory.subcategories.map((subcategory) => (
-                      <div key={subcategory.id} className="subcategory-card">
+                      <div key={subcategory.id} className="subcategory-card" role="listitem">
                         <Link 
                           to={subcategory.path}
                           className="subcategory-link"
                           onClick={closeMenu}
+                          aria-label={`Go to ${subcategory.title} page`}
                         >
                           <h3 className="subcategory-title">{subcategory.title}</h3>
                           <p className="subcategory-description">{subcategory.description}</p>
-                          <div className="visit-page-button">
+                          <div className="visit-page-button" aria-hidden="true">
                             Visit Page
                           </div>
                         </Link>

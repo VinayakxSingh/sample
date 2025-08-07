@@ -34,7 +34,7 @@ export const CardCarousel = ({
   showNavigation = true,
 }) => {
   return (
-    <section className="card-carousel-section">
+    <section className="card-carousel-section" aria-label="Image carousel">
       <div className="card-carousel-outer-container">
         <div className="card-carousel-inner-container">
           {/* <Badge className="badge-position">
@@ -53,7 +53,7 @@ export const CardCarousel = ({
           </div>
 
           <div className="swiper-wrapper-container">
-            <div className="swiper-container">
+            <div className="swiper-container" role="region" aria-label="Image slideshow">
               <Swiper
                 spaceBetween={50}
                 autoplay={{
@@ -81,6 +81,14 @@ export const CardCarousel = ({
                     : undefined
                 }
                 modules={[EffectCoverflow, Autoplay, Pagination, Navigation]}
+                a11y={{
+                  enabled: true,
+                  prevSlideMessage: 'Previous image',
+                  nextSlideMessage: 'Next image',
+                  firstSlideMessage: 'This is the first image',
+                  lastSlideMessage: 'This is the last image',
+                  paginationBulletMessage: 'Go to image {{index}}',
+                }}
               >
                 {images.map((image, index) => (
                   <SwiperSlide key={index}>
@@ -110,8 +118,8 @@ export const CardCarousel = ({
                 ))}
                 {showNavigation && (
                   <>
-                    <div className="swiper-button-next" />
-                    <div className="swiper-button-prev" />
+                    <div className="swiper-button-next" aria-label="Next image" />
+                    <div className="swiper-button-prev" aria-label="Previous image" />
                   </>
                 )}
               </Swiper>

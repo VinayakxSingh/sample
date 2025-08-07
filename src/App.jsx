@@ -5,12 +5,15 @@ import Routing from "./routes/routes.jsx"
 import Footer from "./components/Footer/Footer"
 
 function App() {
-
-
-  return (<>
-    <Navbar />
-    <Routing/>
-    <Footer/>
+  return (
+    <>
+      <header>
+        <Navbar />
+      </header>
+      <Routing/>
+      <footer>
+        <Footer/>
+      </footer>
     </>
   )
 }

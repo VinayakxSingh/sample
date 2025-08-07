@@ -102,27 +102,27 @@ const Articles = () => {
         <div className="articles-content">
           <div className="container">
             {/* Search and Filter Section */}
-            <div className="articles-filters">
-              <div className="search-box">
-                <Search size={20} className="search-icon" />
-                <input
-                  type="text"
-                  placeholder="Search articles..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="search-input"
-                  style={{ fontFamily: 'Georgia, serif' }}
-                />
-              </div>
-              
-              <div className="category-filter">
-                <Filter size={20} className="filter-icon" />
-                <select
-                  value={selectedCategory}
-                  onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="category-select"
-                  style={{ fontFamily: 'Georgia, serif' }}
-                >
+                         <div className="articles-filters">
+               <div className="articles-search-box">
+                 <Search size={20} className="articles-search-icon" />
+                 <input
+                   type="text"
+                   placeholder="Search articles..."
+                   value={searchTerm}
+                   onChange={(e) => setSearchTerm(e.target.value)}
+                   className="articles-search-input"
+                   style={{ fontFamily: 'Georgia, serif' }}
+                 />
+               </div>
+               
+               <div className="articles-category-filter">
+                 <Filter size={20} className="articles-filter-icon" />
+                 <select
+                   value={selectedCategory}
+                   onChange={(e) => setSelectedCategory(e.target.value)}
+                   className="articles-category-select"
+                   style={{ fontFamily: 'Georgia, serif' }}
+                 >
                   <option value="all">All Categories</option>
                   {categories.map(category => (
                     <option key={category} value={category}>{category}</option>

@@ -1,11 +1,11 @@
-# 📝 How to Add Articles to FERZ Website
+#  How to Add Articles to FERZ Website
 
-## 🎯 Overview
+## Overview
 This guide explains how to add new articles to the FERZ website. The system automatically picks up new articles once you follow these steps.
 
 ---
 
-## 📋 Step-by-Step Instructions
+##  Step-by-Step Instructions
 
 ### Step 1: Create Article Folder
 1. Navigate to the `public/articles/` folder in your project
@@ -67,7 +67,7 @@ Add an image file (JPG, PNG, or WebP) named `image.jpg` (or update the filename 
 2. Find this line: `const articleIds = ['article-1', 'article-2', 'article-3'];`
 3. Add your new article ID: `const articleIds = ['article-1', 'article-2', 'article-3', 'article-4'];`
 
-### Step 4: Done! 🎉
+### Step 4: Done! 
 - The article will automatically appear on the homepage carousel (if `featured: true`)
 - It will show up on the `/articles` page
 - Individual article page will be available at `/articles/your-article-slug`
@@ -78,21 +78,21 @@ Add an image file (JPG, PNG, or WebP) named `image.jpg` (or update the filename 
 
 | Field | Required | Description | Example |
 |-------|----------|-------------|---------|
-| `id` | ✅ | Unique identifier | `"article-4"` |
-| `title` | ✅ | Article title | `"AI Safety Guidelines"` |
-| `description` | ✅ | Brief summary | `"Essential safety practices..."` |
-| `author` | ✅ | Author name | `"Edward Meyman"` |
-| `date` | ✅ | Publication date | `"2025-01-30"` |
-| `category` | ✅ | Article category | `"AI Governance"` |
-| `tags` | ✅ | Searchable tags | `["AI", "Safety", "Guidelines"]` |
-| `featured` | ✅ | Show in carousel | `true` or `false` |
-| `readTime` | ✅ | Estimated reading time | `"5 min read"` |
-| `image` | ✅ | Image filename | `"image.jpg"` |
-| `slug` | ✅ | URL-friendly title | `"ai-safety-guidelines"` |
+| `id` | | Unique identifier | `"article-4"` |
+| `title` | | Article title | `"AI Safety Guidelines"` |
+| `description` | | Brief summary | `"Essential safety practices..."` |
+| `author` | | Author name | `"Edward Meyman"` |
+| `date` |  | Publication date | `"2025-01-30"` |
+| `category` |  | Article category | `"AI Governance"` |
+| `tags` |  | Searchable tags | `["AI", "Safety", "Guidelines"]` |
+| `featured` |  | Show in carousel | `true` or `false` |
+| `readTime` |  | Estimated reading time | `"5 min read"` |
+| `image` |  | Image filename | `"image.jpg"` |
+| `slug` |  | URL-friendly title | `"ai-safety-guidelines"` |
 
 ---
 
-## 🎨 Styling & Formatting
+##  Styling & Formatting
 
 ### Font
 - All article text automatically uses **Georgia font**
@@ -117,7 +117,7 @@ Your articles support these Markdown features:
 
 ---
 
-## 📁 Example Folder Structure
+##  Example Folder Structure
 ```
 public/articles/
 ├── article-1/
@@ -140,34 +140,34 @@ public/articles/
 
 ---
 
-## 🔧 Troubleshooting
+##  Troubleshooting
 
 ### Article Not Showing Up?
-- ✅ Check that the article ID is added to `articleIds` array in `articleLoader.js`
-- ✅ Verify `metadata.json` has valid JSON format (use a JSON validator)
-- ✅ Ensure image file exists and is named correctly
-- ✅ Check browser console for any error messages
+-  Check that the article ID is added to `articleIds` array in `articleLoader.js`
+-  Verify `metadata.json` has valid JSON format (use a JSON validator)
+-  Ensure image file exists and is named correctly
+-  Check browser console for any error messages
 
 ### Image Not Loading?
-- ✅ Make sure image file is in the article folder
-- ✅ Check that `image` field in metadata matches filename exactly
-- ✅ Verify image file is not corrupted
-- ✅ Try a different image format (JPG, PNG, WebP)
+-  Make sure image file is in the article folder
+-  Check that `image` field in metadata matches filename exactly
+-  Verify image file is not corrupted
+-  Try a different image format (JPG, PNG, WebP)
 
 ### Content Not Displaying?
-- ✅ Verify `article-data.md` file exists
-- ✅ Check Markdown syntax is correct
-- ✅ Ensure file encoding is UTF-8
-- ✅ Test with simple content first
+-  Verify `article-data.md` file exists
+-  Check Markdown syntax is correct
+-  Ensure file encoding is UTF-8
+-  Test with simple content first
 
 ### Carousel Not Showing Article?
-- ✅ Check that `featured: true` in metadata.json
-- ✅ Verify article ID is in the `articleIds` array
-- ✅ Refresh the page and clear browser cache
+-  Check that `featured: true` in metadata.json
+-  Verify article ID is in the `articleIds` array
+-  Refresh the page and clear browser cache
 
 ---
 
-## 🚀 Quick Start Template
+##  Quick Start Template
 
 ### 1. Create folder: `public/articles/article-4/`
 
@@ -211,7 +211,7 @@ const articleIds = ['article-1', 'article-2', 'article-3', 'article-4'];
 
 ---
 
-## 📞 Need Help?
+##  Need Help?
 
 If you encounter any issues:
 1. Check the troubleshooting section above
